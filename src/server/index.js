@@ -3,9 +3,13 @@ const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 
 // API Credentials
-var textapi = new meaningCloud({
-    application_key: "50bd9a1b3eacf94cc568fb6cee40d70c"
-});
+var apiKey = "50bd9a1b3eacf94cc568fb6cee40d70c"
+
+// Original instructions on API credentials:
+// var textapi = new aylien({
+//   application_id: "your-api-id",
+//   application_key: "your-key"
+// });
 
 const app = express()
 
