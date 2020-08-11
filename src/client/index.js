@@ -9,7 +9,10 @@ import './styles/footer.scss'
 import './styles/form.scss'
 import './styles/header.scss'
 
-console.log(checkForName);
+export {
+    checkForName,
+    handleSubmit
+}
 
-alert("I EXIST")
+alert("I AM INDEX IN CLIENT FOLDER")
 console.log("CHANGE!!");
