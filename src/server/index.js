@@ -8,11 +8,11 @@ dotenv.config();
 console.log(`Your API key is ${process.env.API_KEY}`);
 var apiKey = process.env.API_KEY
 
-// Original instructions on API credentials:
-// var textapi = new aylien({
-//   application_id: "your-api-id",
-//   application_key: "your-key"
-// });
+const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?key='
+let acutalURL = baseURL + apiKey + '&of=json&txt=' + someText + '&model=general&lang=en'
+
+// Example URL:
+// "https://api.meaningcloud.com/sentiment-2.1?key=<<YOUR OWN KEY>>&of=json&txt=Main%20dishes%20were%20blah.&model=Restaurants&lang=en"
 
 const app = express()
 
