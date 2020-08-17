@@ -17,7 +17,6 @@ const handleSubmit = async (event) => {
     document.getElementById('results').innerHTML = meaningObj.status.msg;
 }
 
-
 export { getKey }
 export { getMeaning }
 export { handleSubmit }
