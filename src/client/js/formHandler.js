@@ -1,12 +1,11 @@
-import { getMeaning } from './callAPI'
+import { getMeaning } from './apiGet'
 import { getKey } from './keyGetter'
-
-const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?key='
-const endTag = '&model=general&lang=en'
 
 const handleSubmit = async (event) => {
     event.preventDefault()
     let formText = document.getElementById('name').value
+    const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?key='
+    const endTag = '&model=general&lang=en'
 
     const textURI = '&of=json&txt=' + encodeURI(formText)
 

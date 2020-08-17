@@ -1,6 +1,6 @@
 // Import js files from 'client'
 import { getKey } from './js/keyGetter'
-import { getMeaning } from './js/callAPI'
+import { getMeaning } from './js/apiGet'
 import { handleSubmit } from './js/formHandler'
 
 
