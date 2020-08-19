@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 2;
+    background-color: #d0d9da;
+}
+
+section {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+#evaluation {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Fredericka the Great', cursive;
+    background-color: #fff8dc99;
+    min-height: 100px;
+    margin-bottom: 0px;
+    padding: 20px;
+
+    strong {
+        font-size: 22px;
+        text-decoration: underline;
+        width: 100%;
+    }
+    ul {
+        margin-top: 20px;
+        li {
+            padding: 5px;
+            font-size: 1rem;
+            text-decoration: none;
+            font-family: 'Arvo', serif;
+            font-weight: bold;
+            span {
+                margin-left: 20px;
+                font-weight: lighter;
+                font-size: 14px;
+            }
+        }
+    }
+}

@@ -1,5 +1,39 @@
+$font-one: 'UnifrakturCook', cursive;
+$font-two: 'Arvo', serif;
+
 header {
+    height: 5rem;
     display: flex;
     justify-content: space-between;
-    padding: 10px 40px;
+    align-items: stretch;
+    padding: 0px 30px;
+    background-color: lightgoldenrodyellow;
+}
+
+.title {
+    padding: 10px;
+    h1 {
+        margin: auto;
+        font-family: $font-one;
+        font-size: 2.5rem;
+    }
+    h2 {
+        margin: auto;
+        font-family: $font-two;
+        font-size: 15px;
+    }
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 16px;
+    height: 100%;
+    a {
+        padding: 5px 20px;
+        &:hover {
+            color: red;
+        }
+    }
 }
