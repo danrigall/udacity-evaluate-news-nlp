@@ -13,7 +13,7 @@ describe("Testing the text validity", () => {
         function emptyString() {
             validateText('')
         }
-
+        jest.spyOn(window, 'alert').mockImplementation(() => { });
         expect(emptyString).toThrowError(/^article must be at least 20 characters long$/);
     })
 });

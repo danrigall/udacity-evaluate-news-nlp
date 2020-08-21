@@ -1,5 +1,5 @@
 const getKey = async () => {
-    const response = await fetch('/key');
+    const response = await fetch('http://localhost:8081/key');
     try {
         const key = await response.text()
         console.log(key);

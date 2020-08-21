@@ -1,4 +1,6 @@
 // Import the js file to test
+import { enableFetchMocks } from 'jest-fetch-mock'
+enableFetchMocks()
 import { handleSubmit } from "../src/client/js/formHandler"
 import { getMeaning } from '../src/client/js/apiGetter'
 import { getKey } from '../src/client/js/keyGetter'
@@ -29,15 +31,26 @@ describe("Testing the submit functionality", () => {
                 </ul>
             </section>
             `;
-        // Define the input for the function, if any, in the form of variables/array
-        document.getElementById('article').value = 'Sometimes text is useful.'
+        // Set up Jest-mock
+        beforeEach(() => { // if you have an existing `beforeEach` just add the following line to it
+            fetchMock.doMock()
+        })
+
+        const Client = {
+            post_NLP: () => { // do whatever required here return true;
+            }
+        }
+        const handleSubmitMock = (event, Client) => {
+            // What goes here???
+         }
+
+        document.getElementById('article').value = 'It feels ridiculous to write a test for a function that already works, especially when it is harder to write the test.'
         const submitInput = document.getElementById('submit')
 
         // Define the expected output, if any, in the form of variables/array
         const domElementBuilt = document.getElementById('irony').innerHTML
         submitInput.click()
 
-        expect(handleSubmit).toBeCalled();
-        expect(domElementBuilt).resolves.toContain('IRONIC' || 'NONIRONIC');
+        expect(handleSubmitMock(event, Client)).toBe(true);
     })
 });

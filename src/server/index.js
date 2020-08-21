@@ -8,6 +8,9 @@ const apiKey = process.env.API_KEY
 
 const app = express()
 
+const cors = require('cors');
+app.use(cors());
+
 app.use(express.static('dist'))
 
 console.log(__dirname)
