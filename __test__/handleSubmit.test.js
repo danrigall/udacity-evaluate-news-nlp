@@ -1,10 +1,11 @@
 // Import the js file to test
 import { enableFetchMocks } from 'jest-fetch-mock'
 enableFetchMocks()
-import { handleSubmit } from "../src/client/js/formHandler"
-import { getMeaning } from '../src/client/js/apiGetter'
-import { getKey } from '../src/client/js/keyGetter'
-import { polarityGet } from '../src/client/js/scoreTag'
+import { handleSubmit, validateText } from "../src/client/js/formHandler"
+// import { getMeaning } from '../src/client/js/apiGetter'
+// import { getKey } from '../src/client/js/keyGetter'
+// import { polarityGet } from '../src/client/js/scoreTag'
+// import { validateText } from '../src/client/js/textValidate'
 
 // The describe() function takes two arguments - a string description, and a test suite as a callback function.
 // A test suite may contain one or more related tests
@@ -32,15 +33,14 @@ describe("Testing the submit functionality", () => {
             </section>
             `;
         // Set up Jest-mock
-        beforeEach(() => { // if you have an existing `beforeEach` just add the following line to it
-            fetchMock.doMock()
-        })
+        fetch.mockResponse(() => validateText().then(res => 'ok'))
 
         const Client = {
-            post_NLP: () => { // do whatever required here return true;
+            validateText: () => {
+                // do whatever required here return true;
             }
         }
-        const handleSubmitMock = (event, Client) => {
+        const validateTextMock = (event, Client) => {
             // What goes here???
          }
 
@@ -49,8 +49,9 @@ describe("Testing the submit functionality", () => {
 
         // Define the expected output, if any, in the form of variables/array
         const domElementBuilt = document.getElementById('irony').innerHTML
-        submitInput.click()
+        const click = submitInput.click()
 
-        expect(handleSubmitMock(event, Client)).toBe(true);
+        expect(handleSubmit(click)).toHaveBeenCalled();
+        expect(domElementBuilt).resolves.toContain(String);
     })
 });
