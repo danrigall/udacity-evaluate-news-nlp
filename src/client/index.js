@@ -4,6 +4,7 @@ import { getKey } from './js/keyGetter'
 import { getMeaning } from './js/apiGetter'
 import { handleSubmit } from './js/formHandler'
 import { polarityGet } from './js/scoreTag'
+import { updateUI } from './js/uiHandler'
 
 // Import styles from 'client'
 import './styles/resets.scss'
@@ -17,5 +18,6 @@ export {
     getKey,
     getMeaning,
     polarityGet,
+    updateUI,
     handleSubmit
 }
