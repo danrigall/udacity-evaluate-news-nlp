@@ -1,7 +1,7 @@
+import { validateText } from './textValidate'
 import { getMeaning } from './apiGetter'
 import { getKey } from './keyGetter'
 import { polarityGet } from './scoreTag'
-import { validateText } from './textValidate'
 import { updateUI } from './uiHandler'
 
 const handleSubmit = async (event) => {
@@ -24,9 +24,11 @@ const handleSubmit = async (event) => {
     Client.updateUI(polarity, meaningObj.agreement, meaningObj.subjectivity, meaningObj.confidence, meaningObj.irony)
 }
 
-export { validateText }
-export { getKey }
-export { getMeaning }
-export { polarityGet }
-export { updateUI }
-export { handleSubmit }
+export {
+    validateText,
+    getKey,
+    getMeaning,
+    polarityGet,
+    updateUI,
+    handleSubmit
+ }
