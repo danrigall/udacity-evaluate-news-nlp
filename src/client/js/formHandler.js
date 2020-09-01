@@ -1,6 +1,6 @@
 import { validateText } from './textValidate'
-import { getMeaning } from './apiGetter'
 import { getKey } from './keyGetter'
+import { getMeaning } from './apiGetter'
 import { polarityGet } from './scoreTag'
 import { updateUI } from './uiHandler'
 
