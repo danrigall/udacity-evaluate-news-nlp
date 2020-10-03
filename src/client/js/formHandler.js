@@ -9,15 +9,16 @@ const handleSubmit = async (event) => {
     let formText = document.getElementById('article').value
 
     const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?key='
-    const endTag = '&model=general&lang=en'
+    // const endTag = '&model=general&lang=en'
 
-    const textURI = '&of=json&txt=' + encodeURI(formText)
+    const textURI = '&lang=en&of=json&txt=' + encodeURI(formText)
 
     Client.validateText(formText)
     const apiKey = await Client.getKey()
+    console.log('WHOLE URL IS: ' + baseURL + apiKey + textURI)
+    const meaningObj = await Client.getMeaning(baseURL, apiKey, textURI)
 
-    const meaningObj = await Client.getMeaning(baseURL, apiKey, textURI, endTag)
-
+    console.log('meaningObj came back: ')
     console.log(meaningObj);
     const polarity = await Client.polarityGet(meaningObj.score_tag)
 
